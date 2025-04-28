@@ -9,7 +9,7 @@
 The goal of this project is to build a **Palindrome checker** as part of the **JavaScript Algorithms and Data Structures** on [freeCodeCamp](https://www.freecodecamp.org/).
 
 > 💡 Inspired by:  
-![Palindrome Checker Demo][https://palindrome-checker.freecodecamp.rocks/]
+.[Palindrome Checker Demo](https://palindrome-checker.freecodecamp.rocks/)
 
 ## 🖼️ Project Context
 
