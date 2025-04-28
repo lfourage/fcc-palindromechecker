@@ -17,10 +17,10 @@ const reverseStr = (str) => {
 
 const printResult = (isPalindrome) => {};
 
-const checkPalindrome = () => {
+const checkInput = () => {
     const str = cleanInputStr(getInputStr());
 
     printResult(str === reverseStr(str));
 };
 
-checkBtn.addEventListener("click", checkPalindrome);
+checkBtn.addEventListener("click", checkInput);
