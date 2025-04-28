@@ -3,7 +3,6 @@
 🔗 **Live Website**: Not yet
 
 ---
-![Portfolio-screenshot](https://github.com/user-attachments/assets/b563bbcc-5d77-4009-8cd5-48f1fd9114b4)
 
 ## 🎯 Project Objective
 
