@@ -23,12 +23,7 @@ const cleanInputStr = (str) => {
 };
 
 const reverseStr = (str) => {
-  let reversedStr = "";
-
-  for (let i = 0; i < str.length; i++) {
-    reversedStr += str[str.length - 1 - i];
-  }
-  return reversedStr;
+  return str.split('').reverse().join('');
 };
 
 const printResult = (isPalindrome) => {
