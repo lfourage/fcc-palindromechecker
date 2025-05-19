@@ -1,29 +1,27 @@
 const textInput = document.getElementById("text-input");
 const checkBtn = document.getElementById("check-btn");
 const result = document.getElementById("result");
+const specialCharacter = [
+  { special: /ç/g, norm: 'c'},
+  { special: /é||è||ê||ë/g, norm: 'e'},
+  { special: /à||â||ä/g, norm: 'a'}
+];
 
 const emptyInputAlert = () => {
-  alert("Please input a value");
   result.innerText = "";
-  return "";
-};
-
-const getInputStr = () => {
-  const str = textInput.value;
-
-  return str;
+  textInput.value = "";
+  alert("Please input a value");
 };
 
 const cleanInputStr = (str) => {
   const cleaned = str.toLowerCase();
   const regex = /[^a-z0-9]/g;
 
-  if (!str) return "";
-  return cleaned.replace(regex, "");
-};
-
-const reverseStr = (str) => {
-  return str.split('').reverse().join('');
+  cleaned.replace(regex, "");
+  for (let i = 0; i < specialCharacter.length; i++) {
+    cleaned.replace(specialCharacter[i].special, specialCharacter[i].norm);
+  }
+  return cleaned;
 };
 
 const printResult = (isPalindrome) => {
@@ -32,17 +30,13 @@ const printResult = (isPalindrome) => {
     `;
 };
 
-const resetTextInput = () => {
-  textInput.value = "";
-};
-
 const checkInput = () => {
-  if (!textInput.value) return emptyInputAlert();
+  if (!textInput.value.trim()) return emptyInputAlert();
 
-  const str = cleanInputStr(getInputStr());
+  const str = cleanInputStr(textInput.value);
 
-  printResult(str === reverseStr(str));
-  resetTextInput();
+  printResult(str === str.split('').reverse().join(''));
+  textInput.value = "";
 };
 
 checkBtn.addEventListener("click", checkInput);
