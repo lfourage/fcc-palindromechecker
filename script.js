@@ -31,3 +31,4 @@ const checkInput = () => {
 };
 
 checkBtn.addEventListener("click", checkInput);
+textInput.addEventListener("keydown", (e) => { if (e.key === "Enter") checkInput(); });
